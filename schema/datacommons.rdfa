@@ -115,8 +115,8 @@
 
     <div typeof="rdfs:Class" resource="https://schema.datacommons.org/CriminalActivities">
       <span property="rdfs:label">CriminalActivities</span>
-      <span property="rdfs:comment">Activities or behaviors considered crimes by the FBI. This type is used primarily for computing StatisticalPopulations used in querying crime statistics.</span>
-      <link property="rdfs:subClassOf" href="http://schema.datacommons.org/Intangible"/>
+      <span property="rdfs:comment">Activities or behaviors considered crimes by the FBI. This type is used primarily for computing [[StatisticalPopulation]]s used in querying crime statistics.</span>
+      <link property="rdfs:subClassOf" href="http://schema.org/Intangible"/>
     </div>
     <!-- same or similar terms as Schema.org, we may omit these -->
 
@@ -1365,6 +1365,126 @@
       <span property="rdfs:comment">The wind speed and direction observed or predicted.</span>
       <link property="http://schema.org/domainIncludes" href="https://schema.datacommons.org/WeatherMeasurement"/>
       <link property="http://schema.org/rangeIncludes" href="https://schema.datacommons.org/WindMeasurement"/>
+    </div>
+
+    <div typeof="rdfs:Class" resource="https://schema.datacommons.org/County">
+      <span property="rdfs:label">County</span>
+      <span property="rdfs:comment">In the United States, a county is a political and geographic subdivision of a state. In some cases, counties are coterminous with localities.</span>
+      <link property="rdfs:subClassOf" href="http://schema.org/AdministrativeArea"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/area">
+      <span property="rdfs:label">area</span>
+      <span property="rdfs:comment">The land area of a AdministrativeArea.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/AdministrativeArea"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Number"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/QuantitativeValue"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/timezone">
+      <span property="rdfs:label">timezone</span>
+      <span property="rdfs:comment">The timezone for the location.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/AdministrativeArea"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/dcid">
+      <span property="rdfs:label">dcid</span>
+      <span property="rdfs:comment">The unique identifier for the entity in dataCommons.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/freebaseId">
+      <span property="rdfs:label">freebaseId</span>
+      <span property="rdfs:comment">The unique identifier for the entity in Freebase.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/geonamesId">
+      <span property="rdfs:label">geonamesId</span>
+      <span property="rdfs:comment">The unique identifier for the entity in <a href="http://www.geonames.org/">GeoNames</a>.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/wikidataId">
+      <span property="rdfs:label">wikidataId</span>
+      <span property="rdfs:comment">The unique identifier for the entity in <a href="https://www.wikidata.org/">Wikidata</a>.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/gnisId">
+      <span property="rdfs:label">gnisId</span>
+      <span property="rdfs:comment">The Geographic Names Information System (GNIS) is the Federal and national
+      standard for geographic nomenclature, issued by the U.S. Geological Survey.
+      <br/>
+      Example: "1779778"
+      <br/> Reference: <a href="https://geonames.usgs.gov/domestic/index.html">GNIS</a>. </span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/fipsId">
+      <span property="rdfs:label">fipsId</span>
+      <span property="rdfs:comment">
+      Federal Information Processing Series, issued by the American National
+      Standards Institute codes (ANSI codes). These are standardized numeric or
+      alphabetic codes to ensure uniform identification of geographic entities
+      through all federal government agencies. <br/>
+      Example: "06" for California.<br/>
+      Reference: <a href = "https://www.census.gov/geo/reference/ansi.html"> ANSI</a>.
+      </span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/provenance">
+      <span property="rdfs:label">provenance</span>
+      <span property="rdfs:comment">The source for the data. Provenance is labeled per triple.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.org/Thing"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.org/Text"/>
+    </div>
+
+    <!-- Clinical Trial -->
+
+    <div typeof="rdfs:Class" resource="https://schema.datacommons.org/ClinicalTrial">
+      <span property="rdfs:label">Clinical Trial</span>
+      <span property="rdfs:comment">A clinical trial is a type of medical study that uses scientific process used to compare the safety and efficacy of medical therapies or medical procedures in humans. In general, clinical trials are controlled and patients are allocated at random to the different treatment and/or control groups.</span>
+      <link property="rdfs:subClassOf" href="http://schema.org/MedicalTrial"/>
+    </div>
+
+    <div typeof="rdfs:Class" resource="https://schema.datacommons.org/ClinicalTrialEnum">
+      <span property="rdfs:label">USC_CitizenStatusEnum</span>
+      <span property="rdfs:comment">An base enumeration of clinical trial value sets.</span>
+      <link property="rdfs:subClassOf" href="http://schema.org/Enumeration"/>
+    </div>
+
+    <div typeof="rdfs:Class" resource="https://schema.datacommons.org/PhaseEnum">
+      <span property="rdfs:label">Phase Enum</span>
+      <span property="rdfs:comment">An enumeration of clinical trial phases.</span>
+      <link property="rdfs:subClassOf" href="http://schema.org/ClinicalTrialEnum"/>
+    </div>
+
+    <div typeof="https://schema.datacommons.org/PhaseEnum" resource="https://schema.datacommons.org/Phase1">
+        <span property="rdfs:label">Phase 1</span>
+        <span property="rdfs:comment">Phase 1 clinical trial.</span>
+    </div>
+
+    <div typeof="https://schema.datacommons.org/PhaseEnum" resource="https://schema.datacommons.org/Phase2">
+        <span property="rdfs:label">Phase 2</span>
+        <span property="rdfs:comment">Phase 2 clinical trial.</span>
+    </div>
+
+    <div typeof="https://schema.datacommons.org/PhaseEnum" resource="https://schema.datacommons.org/Phase3">
+        <span property="rdfs:label">Phase 3</span>
+        <span property="rdfs:comment">Phase 3 clinical trial.</span>
+    </div>
+
+    <div typeof="https://schema.datacommons.org/PhaseEnum" resource="https://schema.datacommons.org/Phase4">
+        <span property="rdfs:label">Phase 4</span>
+        <span property="rdfs:comment">Phase 4 clinical trial.</span>
+    </div>
+
+    <div typeof="rdf:Property" resource="https://schema.datacommons.org/phase">
+      <span property="rdfs:label">phase</span>
+      <span property="rdfs:comment">A phase code, as used in clinical trials.</span>
+      <link property="http://schema.org/domainIncludes" href="https://schema.datacommons.org/ClinicalTrial"/>
+      <link property="http://schema.org/rangeIncludes" href="https://schema.datacommons.org/PhaseEnum" />
     </div>
 
 </body>
